@@ -1,0 +1,23 @@
+{
+    "name": "com.bsr.charactercontroller.editor",
+    "rootNamespace": "Bsr.CharacterController.Editor",
+    "references": [
+        "GUID:8c07788e1c3a44b4e87156a30d7212db",
+        "GUID:54cb1906aeb4e4264bc1d2aa3818a43f",
+        "GUID:23f3c6063e13e4fd9addce3606ff4e42",
+        "GUID:f10496e9d78b943308af5e7e9e4543c8",
+        "GUID:21b0c8d1703a94250bfac916590cea4f",
+        "GUID:ea715009a4efd4c6cbc85be3ae097dd3"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

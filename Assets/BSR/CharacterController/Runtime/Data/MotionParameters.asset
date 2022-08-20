@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7311969470291793010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20deb990befb40b5a65c0ed6058785f9, type: 3}
+  m_Name: can_sprint
+  m_EditorClassIdentifier: 
+  defaultValue: 1
+--- !u!114 &-4540547501652031517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9d798dc8984e9fb0ee7b8826e324b3, type: 3}
+  m_Name: jump_force
+  m_EditorClassIdentifier: 
+  defaultValue: 500
+--- !u!114 &-4201023551388412849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba31d3c692284576ad7f05d489bcd3ef, type: 3}
+  m_Name: lock_movement_input
+  m_EditorClassIdentifier: 
+--- !u!114 &-1845412175519445766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20deb990befb40b5a65c0ed6058785f9, type: 3}
+  m_Name: can_jump
+  m_EditorClassIdentifier: 
+  defaultValue: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24029c28fbf44682b69e236b193e523d, type: 3}
+  m_Name: MotionParameters
+  m_EditorClassIdentifier: 
+  parameters:
+  - {fileID: 843276929688138481}
+  - {fileID: 8525803959872073749}
+  - {fileID: 8249501829951746665}
+  - {fileID: -4540547501652031517}
+  - {fileID: 6870980596065673393}
+  - {fileID: 7959725965395954704}
+  - {fileID: -1845412175519445766}
+  - {fileID: -7311969470291793010}
+  - {fileID: 2567486999077411692}
+  - {fileID: -4201023551388412849}
+  - {fileID: 6141832899588155654}
+--- !u!114 &843276929688138481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9d798dc8984e9fb0ee7b8826e324b3, type: 3}
+  m_Name: forward_speed
+  m_EditorClassIdentifier: 
+  defaultValue: 50
+--- !u!114 &2567486999077411692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a6e88bab23a417f840c6c4ab1dea1a4, type: 3}
+  m_Name: direction_transform
+  m_EditorClassIdentifier: 
+  defaultValue: {fileID: 0}
+--- !u!114 &6141832899588155654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a4820e4f7b944a49fda45b6e4b036e9, type: 3}
+  m_Name: movement_axis
+  m_EditorClassIdentifier: 
+  defaultValue: {x: 1, y: 0, z: 1}
+--- !u!114 &6870980596065673393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9d798dc8984e9fb0ee7b8826e324b3, type: 3}
+  m_Name: drag
+  m_EditorClassIdentifier: 
+  defaultValue: 10
+--- !u!114 &7959725965395954704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20deb990befb40b5a65c0ed6058785f9, type: 3}
+  m_Name: can_crouch
+  m_EditorClassIdentifier: 
+  defaultValue: 1
+--- !u!114 &8249501829951746665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9d798dc8984e9fb0ee7b8826e324b3, type: 3}
+  m_Name: backwards_speed
+  m_EditorClassIdentifier: 
+  defaultValue: 35
+--- !u!114 &8525803959872073749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9d798dc8984e9fb0ee7b8826e324b3, type: 3}
+  m_Name: strafe_speed
+  m_EditorClassIdentifier: 
+  defaultValue: 45
