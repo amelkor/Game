@@ -8,6 +8,7 @@ namespace Bsr.CharacterController.Editor
     internal class CharacterControllerAssetManager : ScriptableObject
     {
         [SerializeField] private GameObject simpleControllerPrefab;
+        [SerializeField] private ParametersData simpleMotionParametersData;
 
         public const string PREFS_PREFIX = "BSR.CHARACTERCONTROLLER.";
         private const string NAME_FOR_SIMPLE_CONTROLLER = "Simple First Person Player";
@@ -25,6 +26,11 @@ namespace Bsr.CharacterController.Editor
             if (gameObject.TryGetGameObjectInChildrenWithName("UI", out var ui))
                 SceneVisibilityManager.instance.ToggleVisibility(ui, true);
 
+            if (gameObject.TryGetComponentInChildrenWithName<StateMachine>("movement", out var sm))
+                ConvertStateMachineGraphToEmbed(sm);
+            
+            CharacterSetupPopupWindow.Show(gameObject, Instance.simpleMotionParametersData);
+
             BsrEditorTool.RenameCreatedObject(gameObject);
         }
 
@@ -33,7 +39,11 @@ namespace Bsr.CharacterController.Editor
         private static CharacterControllerAssetManager CreateInstance()
         {
             _instance = CreateInstance<CharacterControllerAssetManager>();
-            if (!Initialized) Initialize();
+            if (!Initialized)
+            {
+                Initialize();
+                Initialized = true;
+            }
 
             return _instance;
         }
@@ -46,6 +56,19 @@ namespace Bsr.CharacterController.Editor
             if (BsrEditorTool.VisualScriptingAddNodeAssembly(assembly) && BsrEditorTool.VisualScriptingAddAssemblyTypesByAttribute<TypeOptionsAddAttribute>(assembly))
             {
                 UnitBase.Rebuild();
+            }
+        }
+
+        private static void ConvertStateMachineGraphToEmbed(StateMachine stateMachine)
+        {
+            if (stateMachine.nest.source == GraphSource.Macro)
+            {
+                var graph = stateMachine.graph.CloneViaSerialization();
+                stateMachine.nest.source = GraphSource.Embed;
+                stateMachine.nest.macro = null;
+                stateMachine.nest.embed = graph;
+                stateMachine.graph.title = "Motion States";
+                stateMachine.graph.summary = "Controls character movement";
             }
         }
 

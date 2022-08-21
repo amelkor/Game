@@ -52,6 +52,7 @@ namespace Bsr.CharacterController
             _bodyDamageColliderHeightOffset = bodyDamageCollider.height - _initialHeight;
         }
 
+        public CapsuleCollider BodyCollider => bodyCollider;
         public State HeightState => _state;
         public bool IsExpanding => _state is State.Expanding;
         

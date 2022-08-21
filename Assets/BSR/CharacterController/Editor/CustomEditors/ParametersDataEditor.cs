@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using Bsr.CharacterController;
 using Bsr.CharacterController.Parameters;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
 
-namespace Game.CharacterController.Editor
+namespace Bsr.CharacterController.Editor
 {
     [CustomEditor(typeof(ParametersData))]
     public class ParametersDataEditor : UnityEditor.Editor

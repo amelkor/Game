@@ -16,6 +16,7 @@ namespace Bsr.CharacterController
             public CapsuleCollider bodyCollider;
         }
 
+        public Color c;
         [SerializeField] private Components components;
 
         private void OnValidate()

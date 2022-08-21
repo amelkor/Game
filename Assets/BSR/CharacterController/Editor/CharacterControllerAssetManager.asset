@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simpleControllerPrefab: {fileID: 5815721497689315031, guid: 42abc7357f7d64347b1f910a077e1591,
     type: 3}
+  simpleMotionParametersData: {fileID: 11400000, guid: 505d23c4d0df51446a3d5d5d2e5bb6b8,
+    type: 2}

@@ -2,7 +2,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Game.CharacterController.Editor
+namespace Bsr.CharacterController.Editor
 {
     [CustomEditor(typeof(ParameterBase), true)]
     public class ParameterEditor : UnityEditor.Editor

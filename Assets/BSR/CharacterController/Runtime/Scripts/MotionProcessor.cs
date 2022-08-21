@@ -207,12 +207,15 @@ namespace Bsr.CharacterController
         [SerializeField] private bool editorShowInput = true;
         [SerializeField] private bool editorShowVelocity = true;
 
+        [System.Diagnostics.Conditional("UNITY_EDITOR")]
+        internal void EditorSetMotionData(ParametersData parameters) => parametersData = parameters;
+        
         private void OnDrawGizmos()
         {
             if (_rb && _directionTransform)
             {
                 var t = _directionTransform.Value;
-                var p = t.position + Vector3.up;
+                var p = dimensions.BodyCollider.center;
 
                 if (editorShowInput)
                 {

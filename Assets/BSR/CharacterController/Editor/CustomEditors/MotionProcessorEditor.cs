@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Bsr.CharacterController;
 using Bsr.CharacterController.Parameters;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-namespace Game.CharacterController.Editor
+namespace Bsr.CharacterController.Editor
 {
     [CustomEditor(typeof(MotionProcessor), true)]
     public class MotionProcessorEditor : UnityEditor.Editor
