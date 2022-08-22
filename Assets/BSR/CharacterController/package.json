@@ -13,8 +13,7 @@
   ],
   "dependencies": {
     "com.unity.inputsystem": "1.3.0",
-    "com.unity.visualscripting": "1.7.8",
-    "dev.bolt.addons": "https://github.com/RealityStop/Bolt.Addons.Community.git"
+    "com.unity.visualscripting": "1.7.8"
   },
   "repository": {
     "url": "https://github.com/amelkor/Game.git",
