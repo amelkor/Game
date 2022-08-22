@@ -61,7 +61,7 @@ namespace Bsr.CharacterController.Editor
                    || variables.declarations.Any(v => v.value is ParameterBase && !motionData.Parameters.Any(p => p.name.Equals(v.name, StringComparison.Ordinal)));
         }
 
-        private void EditorSyncMotionParametersVariables()
+        internal void EditorSyncMotionParametersVariables()
         {
             var variables = _target.Variables;
             var motionData = _target.ParametersData;

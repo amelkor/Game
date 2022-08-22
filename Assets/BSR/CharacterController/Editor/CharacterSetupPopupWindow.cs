@@ -40,6 +40,8 @@ namespace Bsr.CharacterController.Editor
                     motion.EditorSetMotionData(_motionData);
                     BsrEditorTool.EndColor(ColorOptions.Background);
 
+                    ((MotionProcessorEditor)UnityEditor.Editor.CreateEditor(motion, typeof(MotionProcessorEditor))).EditorSyncMotionParametersVariables();
+                    
                     Close();
                 }
                 BsrEditorTool.EndColor(ColorOptions.Background);
@@ -57,6 +59,8 @@ namespace Bsr.CharacterController.Editor
                         var motion = _character.GetComponentInChildren<MotionProcessor>();
                         motion.EditorSetMotionData(data);
                         BsrEditorTool.EndColor(ColorOptions.Background);
+
+                        ((MotionProcessorEditor)UnityEditor.Editor.CreateEditor(motion, typeof(MotionProcessorEditor))).EditorSyncMotionParametersVariables();
 
                         Close();
                     }

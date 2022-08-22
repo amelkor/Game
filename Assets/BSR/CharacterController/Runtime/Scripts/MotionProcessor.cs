@@ -215,7 +215,7 @@ namespace Bsr.CharacterController
             if (_rb && _directionTransform)
             {
                 var t = _directionTransform.Value;
-                var p = dimensions.BodyCollider.center;
+                var p =  t.TransformPoint(dimensions.BodyCollider.center);
 
                 if (editorShowInput)
                 {
