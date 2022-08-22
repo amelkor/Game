@@ -1,7 +1,7 @@
 ﻿{
   "name": "com.bsr.charactercontroller",
   "displayName": "First Person Character Controller",
-  "version": "0.1.0-preview.1",
+  "version": "0.1.0-preview.2",
   "unity": "2022.1",
   "description": "A first person character controller made simple as an one click setup and play system based on Unity's systems.",
   "keywords": [
@@ -17,7 +17,6 @@
   },
   "repository": {
     "url": "https://github.com/amelkor/Game.git",
-    "type": "git",
-    "revision": "376231c460e697d147ef81480ed2421856e05244"
+    "type": "git"
   }
 }

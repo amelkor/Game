@@ -114,7 +114,7 @@ namespace Bsr.CharacterController
 
         public void SetHorizontalMove(Vector2 input)
         {
-            var previousInput = new Vector2(_input.x, _input.y);
+            var previousInput = new Vector2(_input.x, _input.z);
             _input.Set(input.x, _input.y, input.y);
 
             if (previousInput != input)
