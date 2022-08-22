@@ -12,7 +12,8 @@ namespace Bsr.CharacterController.Editor
 
         private void OnGUI()
         {
-            if (GUILayout.Button("Reinitialize dependencies", GUIStyle.none))
+            EditorGUILayout.Space();
+            if (GUILayout.Button("Reinitialize dependencies") && EditorUtility.DisplayDialog("Reinitialize dependencies", "Reinitialize dependencies?", "Yes", "Cancel"))
                 CharacterControllerAssetManager.Initialize();
         }
     }
