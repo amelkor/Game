@@ -35,10 +35,10 @@ namespace Bsr.CharacterController
         [SerializeField] private Variables variables;
 
         [Header("Events")]
-        [Tooltip("Triggered when character is started or ended walking")] public UnityEvent<Vector2> horizontalInputChanged;
+        [Tooltip("Triggered when character horizontal input changed")] public UnityEvent<Vector2> horizontalInputChanged;
         [Tooltip("Triggered when character is started or ended walking")] public UnityEvent<bool> walked;
         [Tooltip("Triggered when character is started or ended sprinting")] public UnityEvent<bool> sprinted;
-        [Tooltip("Triggered when character is started or ended sprinting")] public UnityEvent<bool> crouched;
+        [Tooltip("Triggered when character is started or ended crouching")] public UnityEvent<bool> crouched;
         [Tooltip("Triggered when character is jumped")] public UnityEvent jumped;
 
         private ParameterFloat _forwardSpeed;
@@ -79,7 +79,7 @@ namespace Bsr.CharacterController
         private void Awake()
         {
             _rb = GetComponentInParent<Rigidbody>();
-            
+
             parametersData.GetParameter(motionParameters.forwardSpeed, out _forwardSpeed);
             parametersData.GetParameter(motionParameters.strafeSpeed, out _strafeSpeed);
             parametersData.GetParameter(motionParameters.backwardsSpeed, out _backwardsSpeed);
@@ -152,7 +152,7 @@ namespace Bsr.CharacterController
                 _rb.AddForce(_moveDirection, ForceMode.Acceleration);
             }
         }
-        
+
         private void UpdateConditions()
         {
             var wannaCrouch = _crouchInput && _canCrouch;
@@ -209,13 +209,13 @@ namespace Bsr.CharacterController
 
         [System.Diagnostics.Conditional("UNITY_EDITOR")]
         internal void EditorSetMotionData(ParametersData parameters) => parametersData = parameters;
-        
+
         private void OnDrawGizmos()
         {
             if (_rb && _directionTransform)
             {
                 var t = _directionTransform.Value;
-                var p =  t.TransformPoint(dimensions.BodyCollider.center);
+                var p = t.TransformPoint(dimensions.BodyCollider.center);
 
                 if (editorShowInput)
                 {
@@ -225,7 +225,7 @@ namespace Bsr.CharacterController
                         UnityEditor.Handles.ArrowHandleCap(0, p, Quaternion.LookRotation(t.TransformDirection(_input)), _input.magnitude, EventType.Repaint);
                     }
                 }
-                
+
                 if (editorShowVelocity)
                 {
                     var velocity = _rb.velocity;

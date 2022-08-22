@@ -17,6 +17,9 @@ namespace Bsr.CharacterController.Editor
 
         private void OnEnable()
         {
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
+                return;
+            
             _target = (MotionProcessor)target;
         }
 
@@ -24,27 +27,34 @@ namespace Bsr.CharacterController.Editor
         {
             base.OnInspectorGUI();
             EditorGUILayout.Space();
-            
+
+            var isEditorMode = !EditorApplication.isPlayingOrWillChangePlaymode;
+            GUI.enabled = isEditorMode;
             _autoSyncVariables = EditorGUILayout.Toggle("Auto sync Variables", _autoSyncVariables);
-            if (_autoSyncVariables)
+            GUI.enabled = true;
+
+            if (isEditorMode)
             {
-                if (EditorCanProceedWithSync() && EditorIsVariablesSyncNeeded())
-                    EditorSyncMotionParametersVariables();
-            }
-            else if (EditorCanProceedWithSync())
-            {
-                var isSyncNeeded = EditorIsVariablesSyncNeeded();
-                if (isSyncNeeded)
+                if (_autoSyncVariables)
                 {
-                    EditorGUILayout.HelpBox("MotionData parameters are not synced with Variables", MessageType.Error);
+                    if (EditorCanProceedWithSync() && EditorIsVariablesSyncNeeded())
+                        EditorSyncMotionParametersVariables();
                 }
-
-                if (isSyncNeeded)
-                    GUI.backgroundColor = Color.red;
-
-                if (GUILayout.Button("Sync MotionData Variables") && ((MotionProcessor)target).ParametersData)
+                else if (EditorCanProceedWithSync())
                 {
-                    EditorSyncMotionParametersVariables();
+                    var isSyncNeeded = EditorIsVariablesSyncNeeded();
+                    if (isSyncNeeded)
+                    {
+                        EditorGUILayout.HelpBox("MotionData parameters are not synced with Variables", MessageType.Error);
+                    }
+
+                    if (isSyncNeeded)
+                        GUI.backgroundColor = Color.red;
+
+                    if (GUILayout.Button("Sync MotionData Variables") && ((MotionProcessor)target).ParametersData)
+                    {
+                        EditorSyncMotionParametersVariables();
+                    }
                 }
             }
         }

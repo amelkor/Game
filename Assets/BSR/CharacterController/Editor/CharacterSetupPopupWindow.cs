@@ -106,8 +106,10 @@ namespace Bsr.CharacterController.Editor
             motion.EditorSetMotionData(_motionData);
             BsrEditorTool.EndColor(ColorOptions.Background);
 
-            ((MotionProcessorEditor)UnityEditor.Editor.CreateEditor(motion, typeof(MotionProcessorEditor))).EditorSyncMotionParametersVariables();
-            
+            var ed = ((MotionProcessorEditor)UnityEditor.Editor.CreateEditor(motion, typeof(MotionProcessorEditor)));
+            ed.EditorSyncMotionParametersVariables();
+            ed.serializedObject.Dispose();
+
             Close();
         }
     }
