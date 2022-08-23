@@ -15,18 +15,12 @@ namespace Bsr.CharacterController.Editor
         private bool _autoSyncVariables = true;
         private MotionProcessor _target;
 
-        private void OnEnable()
-        {
-            if (EditorApplication.isPlayingOrWillChangePlaymode)
-                return;
-            
-            _target = (MotionProcessor)target;
-        }
-
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
             EditorGUILayout.Space();
+
+            _target = (MotionProcessor)target;
 
             var isEditorMode = !EditorApplication.isPlayingOrWillChangePlaymode;
             GUI.enabled = isEditorMode;
@@ -73,8 +67,9 @@ namespace Bsr.CharacterController.Editor
 
         internal void EditorSyncMotionParametersVariables()
         {
-            var variables = _target.Variables;
-            var motionData = _target.ParametersData;
+            var t = (MotionProcessor)target;
+            var variables = t.Variables;
+            var motionData = t.ParametersData;
 
             var variablesLookup = new Dictionary<ParameterBase, VariableDeclaration>();
             foreach (var d in variables.declarations)
