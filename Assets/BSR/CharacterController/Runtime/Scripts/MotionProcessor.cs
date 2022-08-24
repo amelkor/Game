@@ -159,7 +159,7 @@ namespace Bsr.CharacterController
             var wannaSprint = _input != Vector3.zero && _sprintInput && _canSprint;
             var wannaWalk = HasMoveInput;
 
-            var willCrouch = !wannaSprint && wannaCrouch && !_lockMovementInput && dimensions.HeightState is not CharacterDimensions.State.Expanding || UnableToUncrouch;
+            var willCrouch = !wannaSprint && wannaCrouch && !_lockMovementInput && !_willJump && dimensions.HeightState is not CharacterDimensions.State.Expanding || UnableToUncrouch;
             var willSprint = wannaSprint && !willCrouch && !_lockMovementInput;
             var willWalk = wannaWalk && !willCrouch && !willSprint && !_lockMovementInput;
 
